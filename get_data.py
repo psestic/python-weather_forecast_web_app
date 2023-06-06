@@ -6,7 +6,8 @@ API_KEY = os.getenv("APIKEY")
 def get_data(place, days):
     url = "http://api.openweathermap.org/data/2.5/forecast?" \
           f"q={place}&" \
-          f"appid={API_KEY}"
+          f"appid={API_KEY}&" \
+          f"units=metric"
     response = requests.get(url)
     data = response.json()
     filtered_data = data["list"]

@@ -25,7 +25,7 @@ try:
     filtered_data = get_data(place, days)
 
     if datatype =="Temperature":
-        temperatures = [(dictionary["main"]["temp"]/10) for dictionary in filtered_data]
+        temperatures = [dictionary["main"]["temp"] for dictionary in filtered_data]
         dates = [dictionary["dt_txt"] for dictionary in filtered_data]
         # Plot temperature graph
         figure = px.line(x=dates,
